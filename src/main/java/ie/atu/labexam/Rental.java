@@ -11,18 +11,24 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Rental {
-    @Pattern(regexp = "RENT-XXXX",message = "Incorrect Rental Code")
+    @Pattern(regexp = "RENT+-+")
     private String rentalCode;
-    @Max(value = 50, message = "Exceeded 50 characters")
+
+    @Size(max = 50, message = "Exceeded 50 characters")
     private String carModel;
+
     @NotBlank(message = "Name must not be empty")
     private String renterName;
+
     @Email(message = "Invalid Email Address")
     private String renterEmail;
 
+    @PastOrPresent
     private Date rentalStartDate;
 
+    @FutureOrPresent
     private Date rentalEndDate;
+
     @PositiveOrZero
     private float dailyRate;
 }
