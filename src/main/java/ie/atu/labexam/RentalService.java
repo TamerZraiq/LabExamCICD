@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class RentalService {
     private List <Rental> list = new ArrayList<>();
-    public List<Rental> getRental(){
+    public List<Rental> getRental(@PathVariable String rentalCode){
         return list;
     }
     public List<Rental> addRental(Rental rental){
