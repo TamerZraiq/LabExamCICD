@@ -11,7 +11,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Rental {
-    @Pattern(regexp = "RENT+-+")
+    @Pattern(regexp = "RENT+-+1234")
     private String rentalCode;
 
     @Size(max = 50, message = "Exceeded 50 characters")
